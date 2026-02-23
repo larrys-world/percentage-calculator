@@ -1,9 +1,13 @@
 import PercentageCalculator from '@/components/PercentageCalculator'
+import AdSense from '@/components/AdSense'
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-gray-100">
       <div className="container mx-auto py-8 px-4">
+        {/* Top Ad */}
+        <AdSense slot="top-banner" format="horizontal" className="mb-6" />
+        
         <h1 className="text-4xl font-bold text-center text-gray-800 mb-2">
           Free Online Percentage Calculator
         </h1>
@@ -13,6 +17,11 @@ export default function Home() {
         </p>
         
         <PercentageCalculator />
+        
+        {/* Mid-content Ad */}
+        <div className="max-w-4xl mx-auto mt-8">
+          <AdSense slot="mid-content" format="rectangle" />
+        </div>
         
         {/* SEO Content */}
         <div className="max-w-4xl mx-auto mt-12 px-4">
@@ -120,6 +129,11 @@ export default function Home() {
               </div>
             </div>
           </section>
+          
+          {/* Bottom Ad */}
+          <div className="mt-8">
+            <AdSense slot="bottom-content" format="rectangle" />
+          </div>
         </div>
       </div>
     </main>
