@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://percentage-calculator.tools/sitemap.xml
+Sitemap: https://larrys-world.github.io/percentage-calculator/sitemap.xml
