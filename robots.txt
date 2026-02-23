@@ -1,0 +1,8 @@
+# Robots.txt for Percentage Calculator
+# Allow all crawlers
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://larrys-world.github.io/percentage-calculator/sitemap.xml
