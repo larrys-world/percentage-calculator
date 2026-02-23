@@ -1,5 +1,6 @@
 import PercentageCalculator from '@/components/PercentageCalculator'
 import AdSense from '@/components/AdSense'
+import BuyMeACoffee from '@/components/BuyMeACoffee'
 
 export default function Home() {
   return (
@@ -134,7 +135,9 @@ export default function Home() {
           <div className="mt-8">
             <AdSense slot="bottom-content" format="rectangle" />
           </div>
-        </div>
+          
+          {/* Support Section */}
+          <BuyMeACoffee />        </div>
       </div>
     </main>
   )
