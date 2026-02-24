@@ -1,8 +1,6 @@
 import PercentageCalculator from '@/components/PercentageCalculator'
 import AdSense from '@/components/AdSense'
 import BuyMeACoffee from '@/components/BuyMeACoffee'
-import FAQ from '@/components/FAQ'
-import Breadcrumbs from '@/components/Breadcrumbs'
 
 export default function Home() {
   return (
