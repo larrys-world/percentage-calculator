@@ -12,6 +12,9 @@ export default function Home() {
         {/* Top Ad */}
         <AdSense slot="top-banner" format="horizontal" className="mb-6" />
         
+        {/* Breadcrumbs */}
+        <Breadcrumbs />
+        
         <h1 className="text-4xl font-bold text-center text-gray-800 mb-2">
           Free Online Percentage Calculator
         </h1>
