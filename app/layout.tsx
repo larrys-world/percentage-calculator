@@ -8,11 +8,11 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Percentage Calculator - Calculate Percentages Instantly | Free Online Tool',
-  description: 'Free percentage calculator for all your percent calculations. Find percentage of a number, calculate percentage increase/decrease, compare values, and more. Used by students, professionals, and businesses worldwide.',
+  description: 'Instant percentage calculations - increase, decrease, difference & more. Free tool with step-by-step solutions. No signup required. Calculate now →',
   keywords: 'percentage calculator, percent calculator, percentage of number, percentage increase, percentage decrease, calculate percentage, percentage change calculator, percent of calculator, percentage difference, percentage formula',
   openGraph: {
     title: 'Percentage Calculator - Calculate Any Percentage Instantly',
-    description: 'Free online percentage calculator with multiple calculation modes. Find percentages, increases, decreases, and differences. Fast, accurate, and mobile-friendly.',
+    description: 'Instant percentage calculations with step-by-step solutions. No signup, no ads. Calculate now →',
     type: 'website',
     url: 'https://larrys-world.github.io/percentage-calculator/',
     siteName: 'Percentage Calculator',
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Percentage Calculator - Free Online Tool',
-    description: 'Calculate percentages instantly. Find percentage of numbers, increases, decreases, and differences.',
+    description: 'Instant percentage calculations. Step-by-step solutions. Calculate now →',
     images: ['https://larrys-world.github.io/percentage-calculator/og-image.png']
   },
   robots: {
@@ -54,7 +54,7 @@ const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'WebApplication',
   name: 'Percentage Calculator',
-  description: 'Free online tool to calculate percentages, percentage increases/decreases, and percentage differences.',
+  description: 'Instant percentage calculations - increase, decrease, difference & more. Step-by-step solutions included.',
   url: 'https://larrys-world.github.io/percentage-calculator/',
   applicationCategory: 'UtilityApplication',
   operatingSystem: 'Any',
