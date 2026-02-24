@@ -96,41 +96,9 @@ export default function Home() {
             </div>
           </section>
           
+          {/* FAQ Component - Using the interactive FAQ component instead of static section */}
           <section className="bg-white rounded-lg shadow-md p-8 mb-8">
-            <h2 className="text-2xl font-bold text-gray-800 mb-4">Frequently Asked Questions</h2>
-            <div className="space-y-4">
-              <div>
-                <h3 className="font-semibold text-gray-700">What is a percentage?</h3>
-                <p className="text-gray-600 mt-1">
-                  A percentage is a way of expressing a number as a fraction of 100. The symbol % means "per hundred" 
-                  or "out of 100". For example, 50% means 50 out of 100, or half.
-                </p>
-              </div>
-              
-              <div>
-                <h3 className="font-semibold text-gray-700">How do I calculate a discount percentage?</h3>
-                <p className="text-gray-600 mt-1">
-                  To find the discount percentage: ((Original Price - Sale Price) / Original Price) × 100. 
-                  For example, if an item originally costs $100 and is on sale for $75, the discount is 25%.
-                </p>
-              </div>
-              
-              <div>
-                <h3 className="font-semibold text-gray-700">How do I calculate tip percentage?</h3>
-                <p className="text-gray-600 mt-1">
-                  Select "Basic Percentage", enter 15 as the percentage and your bill total as the number. 
-                  The result is your tip amount.
-                </p>
-              </div>
-
-              <div>
-                <h3 className="font-semibold text-gray-700">Is this calculator accurate?</h3>
-                <p className="text-gray-600 mt-1">
-                  Yes! Our calculator uses standard mathematical formulas and provides results accurate to 2 decimal places. 
-                  It's suitable for all common percentage calculations.
-                </p>
-              </div>
-            </div>
+            <FAQ />
           </section>
           
           {/* Related Tools - NEW SECTION */}
