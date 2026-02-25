@@ -1,16 +1,40 @@
+'use client'
+
+import { useEffect } from 'react'
 import PercentageCalculator from '@/components/PercentageCalculator'
-import AdSense from '@/components/AdSense'
+import { HeaderAd, FooterAd, InContentAd } from '@/components/monetization/AdSense'
 import BuyMeACoffee from '@/components/BuyMeACoffee'
 import FAQ from '@/components/FAQ'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import RelatedTools from '@/components/RelatedTools'
 
+// AdSense configuration - replace with actual values when available
+const ADSENSE_CLIENT = 'ca-pub-XXXXXXXXXXXXXXXX'
+const ADSENSE_SLOTS = {
+  header: 'XXXXXXXXXX',
+  footer: 'XXXXXXXXXX',
+  content: 'XXXXXXXXXX'
+}
+
 export default function Home() {
+  // Add AdSense script
+  useEffect(() => {
+    const script = document.createElement('script')
+    script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=' + ADSENSE_CLIENT
+    script.async = true
+    script.crossOrigin = 'anonymous'
+    document.head.appendChild(script)
+
+    return () => {
+      document.head.removeChild(script)
+    }
+  }, [])
+
   return (
     <main className="min-h-screen bg-gray-100">
       <div className="container mx-auto py-8 px-4">
         {/* Top Ad */}
-        <AdSense slot="top-banner" format="horizontal" className="mb-6" />
+        <HeaderAd client={ADSENSE_CLIENT} slot={ADSENSE_SLOTS.header} />
         
         {/* Breadcrumbs */}
         <Breadcrumbs />
@@ -27,7 +51,7 @@ export default function Home() {
         
         {/* Mid-content Ad */}
         <div className="mt-8 mb-8">
-          <AdSense slot="mid-content" format="rectangle" />
+          <InContentAd client={ADSENSE_CLIENT} slot={ADSENSE_SLOTS.content} />
         </div>
         
         {/* SEO Content */}
@@ -52,21 +76,21 @@ export default function Home() {
               <h3 className="text-xl font-semibold text-gray-700 mt-6 mb-3">Real-World Applications:</h3>
               <div className="grid md:grid-cols-2 gap-4 mt-4">
                 <div className="bg-gray-50 p-4 rounded">
-                  <h4 className="font-semibold text-gray-700">Shopping & Finance</h4>
-                  <ul className="text-sm text-gray-600 mt-2 space-y-1">
+                  <h4 className="font-semibold text-gray-700 mb-2">Shopping & Finance</h4>
+                  <ul className="text-sm text-gray-600 space-y-1">
                     <li>• Calculate sale discounts</li>
-                    <li>• Determine tip amounts</li>
-                    <li>• Figure out tax rates</li>
+                    <li>• Determine tax amounts</li>
+                    <li>• Figure out tips at restaurants</li>
                     <li>• Compare price changes</li>
                   </ul>
                 </div>
                 <div className="bg-gray-50 p-4 rounded">
-                  <h4 className="font-semibold text-gray-700">Business & Education</h4>
-                  <ul className="text-sm text-gray-600 mt-2 space-y-1">
+                  <h4 className="font-semibold text-gray-700 mb-2">Business & Education</h4>
+                  <ul className="text-sm text-gray-600 space-y-1">
                     <li>• Calculate profit margins</li>
-                    <li>• Determine growth rates</li>
-                    <li>• Convert test scores</li>
-                    <li>• Analyze statistics</li>
+                    <li>• Determine grade percentages</li>
+                    <li>• Analyze growth rates</li>
+                    <li>• Track performance metrics</li>
                   </ul>
                 </div>
               </div>
@@ -74,76 +98,43 @@ export default function Home() {
           </section>
           
           <section className="bg-white rounded-lg shadow-md p-8 mb-8">
-            <h2 className="text-2xl font-bold text-gray-800 mb-4">Percentage Formula Reference</h2>
-            <div className="space-y-4">
-              <div className="bg-gray-50 p-4 rounded">
-                <h3 className="font-semibold text-gray-700">Basic Percentage Formula</h3>
-                <p className="text-gray-600 mt-2">Percentage = (Part / Whole) × 100</p>
-                <p className="text-sm text-gray-500 mt-1">Example: 25 out of 100 = (25/100) × 100 = 25%</p>
+            <h2 className="text-2xl font-bold text-gray-800 mb-4">Percentage Formulas & Examples</h2>
+            <div className="space-y-6">
+              <div className="border-l-4 border-blue-500 pl-4">
+                <h3 className="font-semibold text-gray-700 mb-2">Basic Percentage Formula</h3>
+                <p className="text-gray-600 mb-2">Percentage = (Part / Whole) × 100</p>
+                <p className="text-sm text-gray-500">Example: What percentage is 25 out of 200?</p>
+                <p className="text-sm text-gray-500">Answer: (25 / 200) × 100 = 12.5%</p>
               </div>
               
-              <div className="bg-gray-50 p-4 rounded">
-                <h3 className="font-semibold text-gray-700">Percentage Change Formula</h3>
-                <p className="text-gray-600 mt-2">% Change = ((New Value - Old Value) / Old Value) × 100</p>
-                <p className="text-sm text-gray-500 mt-1">Example: Price increased from $50 to $60 = ((60-50)/50) × 100 = 20%</p>
+              <div className="border-l-4 border-green-500 pl-4">
+                <h3 className="font-semibold text-gray-700 mb-2">Percentage Increase Formula</h3>
+                <p className="text-gray-600 mb-2">Increase % = ((New Value - Old Value) / Old Value) × 100</p>
+                <p className="text-sm text-gray-500">Example: Price increased from $50 to $65</p>
+                <p className="text-sm text-gray-500">Answer: ((65 - 50) / 50) × 100 = 30% increase</p>
               </div>
               
-              <div className="bg-gray-50 p-4 rounded">
-                <h3 className="font-semibold text-gray-700">Finding a Percentage of a Number</h3>
-                <p className="text-gray-600 mt-2">Result = (Percentage / 100) × Number</p>
-                <p className="text-sm text-gray-500 mt-1">Example: 15% of 200 = (15/100) × 200 = 30</p>
+              <div className="border-l-4 border-red-500 pl-4">
+                <h3 className="font-semibold text-gray-700 mb-2">Percentage Decrease Formula</h3>
+                <p className="text-gray-600 mb-2">Decrease % = ((Old Value - New Value) / Old Value) × 100</p>
+                <p className="text-sm text-gray-500">Example: Price decreased from $80 to $60</p>
+                <p className="text-sm text-gray-500">Answer: ((80 - 60) / 80) × 100 = 25% decrease</p>
               </div>
             </div>
           </section>
-          
-          <section className="bg-white rounded-lg shadow-md p-8 mb-8">
-            <h2 className="text-2xl font-bold text-gray-800 mb-4">Frequently Asked Questions</h2>
-            <div className="space-y-4">
-              <div>
-                <h3 className="font-semibold text-gray-700">What is a percentage?</h3>
-                <p className="text-gray-600 mt-1">
-                  A percentage is a way of expressing a number as a fraction of 100. The symbol % means "per hundred" 
-                  or "out of 100". For example, 50% means 50 out of 100, or half.
-                </p>
-              </div>
-              
-              <div>
-                <h3 className="font-semibold text-gray-700">How do I calculate a discount percentage?</h3>
-                <p className="text-gray-600 mt-1">
-                  To find the discount percentage: ((Original Price - Sale Price) / Original Price) × 100. 
-                  For example, if an item originally costs $100 and is on sale for $75, the discount is 25%.
-                </p>
-              </div>
-              
-              <div>
-                <h3 className="font-semibold text-gray-700">How do I calculate tip percentage?</h3>
-                <p className="text-gray-600 mt-1">
-                  Select "Basic Percentage", enter 15 as the percentage and your bill total as the number. 
-                  The result is your tip amount.
-                </p>
-              </div>
-
-              <div>
-                <h3 className="font-semibold text-gray-700">Is this calculator accurate?</h3>
-                <p className="text-gray-600 mt-1">
-                  Yes! Our calculator uses standard mathematical formulas and provides results accurate to 2 decimal places. 
-                  It's suitable for all common percentage calculations.
-                </p>
-              </div>
-            </div>
-          </section>
-          
-          {/* Related Tools - NEW SECTION */}
-          <RelatedTools />
-          
-          {/* Bottom Ad */}
-          <div className="mt-8">
-            <AdSense slot="bottom-content" format="rectangle" />
-          </div>
-          
-          {/* Support Section */}
-          <BuyMeACoffee />
         </div>
+        
+        {/* Buy Me a Coffee */}
+        <BuyMeACoffee />
+        
+        {/* FAQ Section */}
+        <FAQ />
+        
+        {/* Related Tools */}
+        <RelatedTools />
+        
+        {/* Bottom Ad */}
+        <FooterAd client={ADSENSE_CLIENT} slot={ADSENSE_SLOTS.footer} />
       </div>
     </main>
   )
